@@ -1,0 +1,30 @@
+<Styles 
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:controls="clr-namespace:PowerControlsInList.Controls">
+
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <!-- Add Controls for Previewer Here -->
+    </Border>
+  </Design.PreviewWith>
+
+  <Style Selector="controls|DimmingControl">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <StackPanel>
+
+          <TextBlock 
+            Text="{Binding DimmingValue, RelativeSource={RelativeSource TemplatedParent}}" 
+            HorizontalAlignment="Center" />
+
+          <StackPanel Orientation="Horizontal">
+            <Button Content="Power Down" Margin="10" Command="{Binding PowerDownCommand, RelativeSource={RelativeSource TemplatedParent}}" />
+            <Button Content="Power Up" Margin="10" Command="{Binding PowerUpCommand, RelativeSource={RelativeSource TemplatedParent}}" />
+          </StackPanel>
+
+        </StackPanel>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>
